@@ -1,0 +1,184 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1208,3372" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="29">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.DataTableUtilities</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="27">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="DataTable" sap:VirtualizedContainerService.HintSize="552,3307" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="sd:DataTable" Name="dtStuDet" />
+      <Variable x:TypeArguments="x:String" Name="strStuDet" />
+      <Variable x:TypeArguments="x:Int64" Name="iMobNo" />
+      <Variable x:TypeArguments="sd:DataTable" Name="dtFilteredDet" />
+      <Variable x:TypeArguments="sd:DataTable" Name="dtSortedDet" />
+      <Variable x:TypeArguments="x:String" Name="strStuNam" />
+      <Variable x:TypeArguments="x:Object" Name="iMobNum" />
+      <Variable x:TypeArguments="x:Int32" Name="iLookup" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:BuildDataTable DataTable="[dtStuDet]" DisplayName="Build Student Details" sap:VirtualizedContainerService.HintSize="510,59" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xD;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xD;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xD;&#xA;      &lt;xs:complexType&gt;&#xD;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xD;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xD;&#xA;            &lt;xs:complexType&gt;&#xD;&#xA;              &lt;xs:sequence&gt;&#xD;&#xA;                &lt;xs:element name=&quot;RollNo&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;StudentName&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;EmailID&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;TotalMark&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; /&gt;&#xD;&#xA;              &lt;/xs:sequence&gt;&#xD;&#xA;            &lt;/xs:complexType&gt;&#xD;&#xA;          &lt;/xs:element&gt;&#xD;&#xA;        &lt;/xs:choice&gt;&#xD;&#xA;      &lt;/xs:complexType&gt;&#xD;&#xA;      &lt;xs:unique name=&quot;Constraint1&quot;&gt;&#xD;&#xA;        &lt;xs:selector xpath=&quot;.//TableName&quot; /&gt;&#xD;&#xA;        &lt;xs:field xpath=&quot;RollNo&quot; /&gt;&#xD;&#xA;      &lt;/xs:unique&gt;&#xD;&#xA;    &lt;/xs:element&gt;&#xD;&#xA;  &lt;/xs:schema&gt;&#xD;&#xA;  &lt;TableName&gt;&#xD;&#xA;    &lt;RollNo&gt;1926JA13&lt;/RollNo&gt;&#xD;&#xA;    &lt;StudentName&gt;GowriMaheshwari&lt;/StudentName&gt;&#xD;&#xA;    &lt;EmailID&gt;gowri@gmail.com&lt;/EmailID&gt;&#xD;&#xA;    &lt;TotalMark&gt;400&lt;/TotalMark&gt;&#xD;&#xA;  &lt;/TableName&gt;&#xD;&#xA;  &lt;TableName&gt;&#xD;&#xA;    &lt;RollNo&gt;1926JA18&lt;/RollNo&gt;&#xD;&#xA;    &lt;StudentName&gt;Indumathi&lt;/StudentName&gt;&#xD;&#xA;    &lt;EmailID&gt;sindumathi@gmail.com&lt;/EmailID&gt;&#xD;&#xA;    &lt;TotalMark&gt;498&lt;/TotalMark&gt;&#xD;&#xA;  &lt;/TableName&gt;&#xD;&#xA;  &lt;TableName&gt;&#xD;&#xA;    &lt;RollNo&gt;1926JA38&lt;/RollNo&gt;&#xD;&#xA;    &lt;StudentName&gt;Roshini&lt;/StudentName&gt;&#xD;&#xA;    &lt;EmailID&gt;roshini@gmail.com&lt;/EmailID&gt;&#xD;&#xA;    &lt;TotalMark&gt;399&lt;/TotalMark&gt;&#xD;&#xA;  &lt;/TableName&gt;&#xD;&#xA;&lt;/NewDataSet&gt;" />
+    <ui:OutputDataTable DataTable="[dtStuDet]" DisplayName="Output Data Table" sap:VirtualizedContainerService.HintSize="510,22" sap2010:WorkflowViewState.IdRef="OutputDataTable_1" Text="[strStuDet]" />
+    <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Displaying Students Details" sap:VirtualizedContainerService.HintSize="510,59" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[strStuDet]" />
+    <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{&quot;1926JA19&quot;,&quot;Jyothi&quot;,&quot;jomojo@gmail.com&quot;,430}]" DataTable="[dtStuDet]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="510,22" sap2010:WorkflowViewState.IdRef="AddDataRow_1" />
+    <ui:OutputDataTable DataTable="[dtStuDet]" DisplayName="Output Data Table" sap:VirtualizedContainerService.HintSize="510,22" sap2010:WorkflowViewState.IdRef="OutputDataTable_2" Text="[strStuDet]" />
+    <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Displaying Students Details" sap:VirtualizedContainerService.HintSize="510,59" sap2010:WorkflowViewState.IdRef="MessageBox_2" Text="[strStuDet]" />
+    <ui:AddDataColumn x:TypeArguments="x:Object" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="MobileNo" DataTable="[dtStuDet]" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="510,22" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_1" />
+    <ui:OutputDataTable DataTable="[dtStuDet]" DisplayName="Output Data Table" sap:VirtualizedContainerService.HintSize="510,22" sap2010:WorkflowViewState.IdRef="OutputDataTable_3" Text="[strStuDet]" />
+    <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Displaying Students Details" sap:VirtualizedContainerService.HintSize="510,59" sap2010:WorkflowViewState.IdRef="MessageBox_3" Text="[strStuDet]" />
+    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dtStuDet]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="510,1095" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+      <ui:ForEachRow.Body>
+        <ActivityAction x:TypeArguments="sd:DataRow">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="476,975" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:GetRowItem Column="{x:Null}" ColumnIndex="{x:Null}" ColumnName="StudentName" DisplayName="Get Row Item" sap:VirtualizedContainerService.HintSize="434,185" sap2010:WorkflowViewState.IdRef="GetRowItem_2" Row="[CurrentRow]">
+              <ui:GetRowItem.Value>
+                <OutArgument x:TypeArguments="x:String">[strStuNam]</OutArgument>
+              </ui:GetRowItem.Value>
+            </ui:GetRowItem>
+            <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Displaying Students Details" sap:VirtualizedContainerService.HintSize="434,59" sap2010:WorkflowViewState.IdRef="MessageBox_9" Text="[strStuNam]" />
+            <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Getting Input From User" sap:VirtualizedContainerService.HintSize="434,238" sap2010:WorkflowViewState.IdRef="InputDialog_1" IsPassword="False" Label="[&quot;Enter Mobile No For :&quot; + CurrentRow(&quot;StudentName&quot;).ToString]" Title="Update Mobile No">
+              <ui:InputDialog.Result>
+                <OutArgument x:TypeArguments="x:Int64">[iMobNo]</OutArgument>
+              </ui:InputDialog.Result>
+            </ui:InputDialog>
+            <ui:UpdateRowItem ColumnIndex="{x:Null}" ColumnName="MobileNo" DisplayName="Update Row Item" sap:VirtualizedContainerService.HintSize="434,190" sap2010:WorkflowViewState.IdRef="UpdateRowItem_3" Row="[CurrentRow]" Value="[iMobNo]" />
+            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="434,51" sap2010:WorkflowViewState.IdRef="CommentOut_5">
+              <ui:CommentOut.Body>
+                <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="304,152" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <Assign DisplayName="Assigning MobileNo" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_1">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:Object">[CurrentRow("MobileNo")]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:Object">[iMobNo]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                </Sequence>
+              </ui:CommentOut.Body>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:CommentOut>
+          </Sequence>
+        </ActivityAction>
+      </ui:ForEachRow.Body>
+    </ui:ForEachRow>
+    <ui:OutputDataTable DataTable="[dtStuDet]" DisplayName="Output Data Table" sap:VirtualizedContainerService.HintSize="510,22" sap2010:WorkflowViewState.IdRef="OutputDataTable_5" Text="[strStuDet]" />
+    <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Displaying Students Details" sap:VirtualizedContainerService.HintSize="510,59" sap2010:WorkflowViewState.IdRef="MessageBox_5" Text="[strStuDet]" />
+    <ui:RemoveDataRow Row="{x:Null}" DataTable="[dtStuDet]" DisplayName="Remove Data Row" sap:VirtualizedContainerService.HintSize="510,22" sap2010:WorkflowViewState.IdRef="RemoveDataRow_1" RowIndex="3" />
+    <ui:OutputDataTable DataTable="[dtStuDet]" DisplayName="Output Data Table" sap:VirtualizedContainerService.HintSize="510,22" sap2010:WorkflowViewState.IdRef="OutputDataTable_4" Text="[strStuDet]" />
+    <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Displaying Students Details" sap:VirtualizedContainerService.HintSize="510,59" sap2010:WorkflowViewState.IdRef="MessageBox_4" Text="[strStuDet]" />
+    <ui:RemoveDataColumn Column="{x:Null}" ColumnIndex="{x:Null}" ColumnName="EmailID" DataTable="[dtStuDet]" DisplayName="Remove Data Column" sap:VirtualizedContainerService.HintSize="510,22" sap2010:WorkflowViewState.IdRef="RemoveDataColumn_1" />
+    <ui:OutputDataTable DataTable="[dtStuDet]" DisplayName="Output Data Table" sap:VirtualizedContainerService.HintSize="510,22" sap2010:WorkflowViewState.IdRef="OutputDataTable_6" Text="[strStuDet]" />
+    <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Displaying Students Details" sap:VirtualizedContainerService.HintSize="510,59" sap2010:WorkflowViewState.IdRef="MessageBox_6" Text="[strStuDet]" />
+    <ui:SortDataTable ColumnIndex="{x:Null}" DataColumn="{x:Null}" ColumnName="TotalMark" DataTable="[dtStuDet]" DisplayName="Sort Data Table" sap:VirtualizedContainerService.HintSize="510,22" sap2010:WorkflowViewState.IdRef="SortDataTable_1" Order="Decending" OutputDataTable="[dtSortedDet]" SortOrder="Descending" />
+    <ui:OutputDataTable DataTable="[dtSortedDet]" DisplayName="Output Data Table" sap:VirtualizedContainerService.HintSize="510,22" sap2010:WorkflowViewState.IdRef="OutputDataTable_8" Text="[strStuDet]" />
+    <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Displaying Students Details" sap:VirtualizedContainerService.HintSize="510,59" sap2010:WorkflowViewState.IdRef="MessageBox_8" Text="[strStuDet]" />
+    <ui:FilterDataTable DataTable="[dtStuDet]" DisplayName="Filter Data Table" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="510,160" sap2010:WorkflowViewState.IdRef="FilterDataTable_1" OutputDataTable="[dtFilteredDet]" SelectColumnsMode="Keep">
+      <ui:FilterDataTable.Filters>
+        <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
+          <ui:FilterOperationArgument BooleanOperator="And" Operator="GT">
+            <ui:FilterOperationArgument.Column>
+              <InArgument x:TypeArguments="x:String">["TotalMark"]</InArgument>
+            </ui:FilterOperationArgument.Column>
+            <ui:FilterOperationArgument.Operand>
+              <InArgument x:TypeArguments="x:Int32">[450]</InArgument>
+            </ui:FilterOperationArgument.Operand>
+          </ui:FilterOperationArgument>
+        </scg:List>
+      </ui:FilterDataTable.Filters>
+      <ui:FilterDataTable.SelectColumns>
+        <scg:List x:TypeArguments="InArgument" Capacity="4">
+          <InArgument x:TypeArguments="x:String">["TotalMark"]</InArgument>
+        </scg:List>
+      </ui:FilterDataTable.SelectColumns>
+    </ui:FilterDataTable>
+    <ui:OutputDataTable DataTable="[dtFilteredDet]" DisplayName="Output Data Table" sap:VirtualizedContainerService.HintSize="510,22" sap2010:WorkflowViewState.IdRef="OutputDataTable_7" Text="[strStuDet]" />
+    <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Filtered data " sap:VirtualizedContainerService.HintSize="510,59" sap2010:WorkflowViewState.IdRef="MessageBox_7" Text="[strStuDet]" />
+    <ui:LookupDataTable LookupColumnIndex="{x:Null}" LookupDataColumn="{x:Null}" RowIndex="{x:Null}" TargetColumnIndex="{x:Null}" TargetDataColumn="{x:Null}" DataTable="[dtStuDet]" DisplayName="Lookup Data Table" sap:VirtualizedContainerService.HintSize="510,22" sap2010:WorkflowViewState.IdRef="LookupDataTable_1" LookupColumnName="StudentName" LookupValue="GowriMaheshwari" TargetColumnName="TotalMark">
+      <ui:LookupDataTable.CellValue>
+        <OutArgument x:TypeArguments="x:Int32">[iLookup]</OutArgument>
+      </ui:LookupDataTable.CellValue>
+    </ui:LookupDataTable>
+    <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Lookup Value" sap:VirtualizedContainerService.HintSize="510,59" sap2010:WorkflowViewState.IdRef="MessageBox_10" Text="[iLookup]" />
+    <ui:ClearDataTable DataTable="[dtStuDet]" DisplayName="Clear Data Table" sap:VirtualizedContainerService.HintSize="510,22" sap2010:WorkflowViewState.IdRef="ClearDataTable_1" />
+  </Sequence>
+</Activity>
